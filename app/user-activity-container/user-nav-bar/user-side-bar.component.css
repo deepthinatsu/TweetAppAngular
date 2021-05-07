@@ -1,0 +1,41 @@
+.btn{
+    font-size: 25px;
+}
+.bg-danger-color-dark {
+    color: #fff;
+    background-color: #1DA1F2
+}
+.logout-btn{
+    color: white;
+    font-size: 20px;
+}
+.logout-btn:hover{
+    color: white;
+    background-color: #1f9ae7;
+}
+
+.navbar {
+    overflow: hidden;
+    /* background-color: #333; */
+    position: fixed;
+    /* height: 8%; */
+    top: 0;
+    width: 100%;
+  }
+
+.nav-link{
+    color: white;
+    font-size: large;
+}
+
+.link-profile{
+    color: white;
+}
+/* .link-profile:hover{
+    color: greenyellow
+} */
+.nav-link:hover{
+    outline: lightblue;
+    color: #0b79a5 ;
+}
+

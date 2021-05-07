@@ -1,0 +1,56 @@
+<div class="top bg-danger-color-dark py-3" style="text-align: left;">
+     <div class="col-lg-3">
+     <h3 style="font-family: 'Brush Script MT', cursive;">TWEETAPP</h3></div>
+</div>
+
+<div class="container-fluid login px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+
+    <div class="card card0 border-0">
+        <div class="row content d-flex">
+            <div class="col-lg-6 bg-img">
+                <img src="https://static.jeffbullas.com/wp-content/uploads/2012/06/Twitter-Logo.png" class="bg-img" alt="cinque terre">
+            </div>
+            <div class="col-lg-4">
+                <div class="card2 card border-0 px-4 py-5">
+                    <div class="row mb-4 px-3">
+                        <h3 class=" mb-0 mr-4 mt-2" style="font-family: 'inherit';">Login </h3>
+                    </div>
+                    <div class="text-center">
+                        <p *ngIf="invalid" style="color: red; text-transform: capitalize;font-size: 14px;letter-spacing: 1px">Invalid Credentials!  </p>
+                        <p *ngIf="nullValueErrorMessage" style="color: black; text-transform: capitalize;font-size: 14px;letter-spacing: 1px">Please enter the USERNAME and PASSWORD to Login </p>
+                    </div>
+                    <form class="formgroup" [formGroup]="myFormGroup" (ngSubmit)="login()">
+                    <div class="row px-3"> 
+                        <label class="mb-1">
+                            <h6 class="mb-0 text-sm"></h6>
+                        </label> 
+                        <input class="mb-4 form-control" [formControl]="myFormGroup.controls['email']" [ngClass]="{'warningOutline' : emailValid}" type="text" (keyup) ="emailValidation(email)" #email name="email" placeholder="email id"> 
+                        
+                        </div>
+                    <div class="row px-3"> 
+                        <label class="mb-1">
+                            <h6 class="mb-0 text-sm"></h6>
+                        </label> 
+                        <input class="form-control" [formControl]="myFormGroup.controls['password']" type="password" #password name="password" (keyup) ="passwordEmpty()" placeholder="password"> </div>
+                        
+                        <div class="row px-3 mt-2 "> 
+                            <label class="mb-4 mt-2">
+                            <h6 class="mb-0 forgot text-md"><a [routerLink]="['/forgot']" style="text-decoration: none;">Forgot Password ?</a></h6>
+                            </label> 
+                        </div>
+                   
+                        <div class="form-group row mb-3  px-3"> <button type="submit" class="btn btn-block btn-blue text-center">Login</button> </div>
+                    <div class="row mb-4 px-3 text-md"> <small class="font-weight-normal">Don't have an account? <a class="text-primary font-weight-bold "  [routerLink]="['/register']" >Register</a></small> </div>
+                </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer bg-danger-color-dark py-2">
+            <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2021.</small>
+                <div class="social-contact ml-4 ml-sm-auto">  
+            </div>
+        </div>
+    </div>
+</div>
+</div>

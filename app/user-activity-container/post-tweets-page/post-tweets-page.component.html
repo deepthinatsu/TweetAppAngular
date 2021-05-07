@@ -1,0 +1,51 @@
+<app-user-side-bar class="top"></app-user-side-bar>
+
+<div class="container-fluid login px-1 px-md-5 px-lg-1 px-xl-5 mt-4 py-5 mx-auto">
+    
+    <div *ngIf="showElement"  class=" msg mt-1">
+        <div  id="alert-dismissible" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Tweet Posted.</strong>
+        </div>
+    </div>
+    
+    <div class="card card0 border-0">
+
+        <div class="bg-light py-3" style="text-align: center;">
+          
+            <h3 style="font-family:  Arial, Helvetica, sans-serif;">Post your tweet</h3>
+        </div>
+      
+       
+        <div class="row d-flex">
+            <div class="col-lg-3">
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                   
+                    <form class="formgroup" [formGroup]="myFormGroup" (ngSubmit)="postTweet()">
+                        <div style="text-align: center;">
+                            <p *ngIf="tweetEmpty"> Why post an empty tweet? Share your thoughts!</p>
+                        </div>
+                        <div class="row px-3"> 
+                            <label class="mb-1">                                
+                            <h6 class="mb-0 text-md">Tweet Your Thoughts <i class="fas fa-pen"></i></h6>
+                            </label> 
+                            <textarea class="text-area mb-0 form-control" [formControl]="myFormGroup.controls['tweet']" (keyup) ="tweetLengthValidationMethod()" id="textarea" placeholder="What's Happening?" maxlength="145" name="textarea" rows="3"></textarea>
+                            <div *ngIf="showTweetLength">
+                                <p *ngIf="showTweetRed"><b  style="color: red;">145 </b> characters length completed</p>
+                                
+                            </div>
+                        </div>
+
+                    
+                        <div class="row mb-3 mt-1 px-3"> 
+                            <button type="submit" class="form-group form-control btn-blue text-center">Post Tweet<i class="far fa-paper-plane"></i></button> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
